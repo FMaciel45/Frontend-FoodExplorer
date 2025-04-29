@@ -1,4 +1,4 @@
-import { Container, Content, Main, CartItems, Payment } from "./styles";
+import { Container, Content, Main, CartItems, Address, Payment, GoConfirmButton } from "./styles";
 
 import { Header } from "../../components/header";
 import { Footer } from "../../components/footer";
@@ -50,6 +50,27 @@ export function Cart() {
 
           </CartItems>
 
+          <Address>
+
+            <h1>Endereço para entrega</h1>
+
+            <p>CEP</p>
+            <Input placeholder = "12.123-123"/>
+
+            <p>Endereço para entrega</p>
+            <Input placeholder = "Ex.:"/>
+
+            <p>Número</p>
+            <Input placeholder = "Ex.: 123"/>
+
+            <p>Cidade</p>
+            <Input placeholder = "Ex.: Brasília"/>
+
+            <p>Estado/UF</p>
+            <Input placeholder = "Ex.: Distrito Federal"/>
+
+          </Address>
+
           <Payment>
 
             <div className="paymentSelector-wrapper">
@@ -81,7 +102,8 @@ export function Cart() {
               </div>
             )}
 
-            {paymentMethod === "cartao" && (
+            {
+              paymentMethod === "cartao" && (
 
               <div className="cardPayment-wrapper">
 
@@ -115,13 +137,9 @@ export function Cart() {
 
             )}
 
-            <div className="button-wrapper">
-
-              <Button title="Efetuar pedido" />
-
-            </div>
-
           </Payment>
+
+          <GoConfirmButton to = "/confirm">Confirmar Pedido</GoConfirmButton>
 
         </Main>
 

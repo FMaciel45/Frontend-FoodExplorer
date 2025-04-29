@@ -12,6 +12,8 @@ dist
 dist-ssr
 *.local
 
+# Backend p/ desenvolvimento: http://localhost:3333
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
+import { Link } from "react-router-dom";
+
 export const Container = styled.div`
 `;
 
@@ -18,10 +20,11 @@ export const Content = styled.div`
 export const Main = styled.div`
   display: grid;
   place-content: center;
-  gap: 24px;
+  gap: 52px;
   grid-template-areas: 
-    "payment items"
-    "payment items"
+    "items address payment"
+    "items address payment"
+    "items button button"
   ;
 
   margin-top: 32px;
@@ -33,11 +36,25 @@ export const CartItems = styled.div`
   border: 1px solid ${({ theme }) => theme.COLORS.LIGHT_600};
   border-radius: 8px;
 
-  width: 600px;
+  width: 390px;
   height: 620px;
 
   margin-top: 44px;
 `;
+
+export const Address = styled.div`
+  margin-top: 51px;
+
+  h1 {
+    margin-bottom: 36px;
+  }
+
+  p {
+    margin: 14px 0px 6px 0px;
+
+    font-size: 18px;
+  }
+`
 
 export const Payment = styled.div`
   grid-area: payment;
@@ -45,8 +62,6 @@ export const Payment = styled.div`
   display: flex;
   flex-direction: column;
   gap: 14px;
-
-  width: 450px;
 
   margin-top: 44px;
 
@@ -77,9 +92,9 @@ export const Payment = styled.div`
 
   .cardPayment-wrapper 
     p {
-      margin: 14px 0px 8px 0px;
+      margin: 14px 0px 6px 0px;
 
-      font-weight: 500;
+      font-size: 18px;
     }
 
   .securityCode-wrapper p, .quota-wrapper p {
@@ -92,12 +107,25 @@ export const Payment = styled.div`
     flex-direction: row;
     gap: 14px; 
   }
-
-  .button-wrapper button {
-    margin-top: 24px;
-
-    height: 64px;
-    width: 420px;
-  }
 `;
 
+export const GoConfirmButton = styled(Link)`
+  grid-area: button;
+
+  display: flex;
+  justify-content: center;
+  place-items: center;
+
+  font-size: 20px;
+  color: ${({theme}) => theme.COLORS.LIGHT_100};
+  
+  width: 100%;
+  height: 64px;
+
+  margin-top: -64px;
+
+  background: ${({ theme }) => theme.COLORS.RED_100};
+
+  border: none;
+  border-radius: 5px;
+`;

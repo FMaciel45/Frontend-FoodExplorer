@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import { DEVICE_BREAKPOINTS } from "../../styles/deviceBreakpoints";
 
 export const Container = styled.div`
@@ -57,12 +56,10 @@ export const Banner = styled.div`
   grid-area: banner;
 
   margin-top: 24px;
-
   padding: 32px 50px;
 
   display: flex;
   justify-content: space-between;
-
   position: relative;
 
   background: var(--Gradients-200, linear-gradient(180deg, #091E26 0%, #00131C 100%));
@@ -123,7 +120,7 @@ export const Banner = styled.div`
 
   @media (min-width: ${DEVICE_BREAKPOINTS.LG}) {
     .title-wrapper {
-        h1 {
+      h1 {
         font-size: 36px;
       }
 
@@ -134,7 +131,7 @@ export const Banner = styled.div`
 
     img {
       width: 100%;
-      height: 335px;
+      height: 337px;
 
       margin-left: -96px;
       margin-top: -79px;
@@ -148,23 +145,50 @@ export const Content = styled.div`
 
   .cards-wrapper {
     padding: 12px 72px 72px 72px;
-    .section-dishes, .section-desserts, .section-drinks {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .section-dishes,
+    .section-desserts,
+    .section-drinks {
       font-size: 42px;
-      margin-bottom: 32px;
+      margin: 24px 0px 32px 0px;
+      align-self: flex-start; 
     }
   }
 
-  .swiper-button-next, .swiper-button-prev {
+  .swiper-button-next,
+  .swiper-button-prev {
     color: ${({ theme }) => theme.COLORS.LIGHT_100};
     width: 14px;
     height: 14px;
+  }
+
+  .swiper {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  .swiper-slide {
+    display: flex;
+    justify-content: center;
   }
 
   @media (max-width: ${DEVICE_BREAKPOINTS.MD}) {
     .cards-wrapper {
       padding: 32px;
 
-      .section-dishes, .section-desserts, .section-drinks {
+      .section-dishes,
+      .section-desserts,
+      .section-drinks {
         font-size: 28px;
         margin-bottom: 24px;
       }
@@ -175,7 +199,9 @@ export const Content = styled.div`
     .cards-wrapper {
       padding: 12px;
 
-      .section-dishes, .section-desserts, .section-drinks {
+      .section-dishes,
+      .section-desserts,
+      .section-drinks {
         font-size: 24px;
         margin-bottom: 18px;
       }
